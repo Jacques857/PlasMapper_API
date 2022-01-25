@@ -6,12 +6,12 @@
 ### **Output JSON fields**:
 * promoters: Array of Feature Objects that represent promoters
 * terminators: Array of Feature Objects that represent terminators
-* regulatory sequences: Array of Feature Objects that represent regulatory sequences
-* replication origins: Array of Feature Objects that represent replication origins
-* selectable markers: Array of Feature Objects that represent selectable markers
-* reporter genes: Array of Feature Objects that represent reporter genes
-* affinity tags: Array of Feature Objects that represent affinity tags
-* miscellaneous features: Array of Feature Objects that represent miscellaneous features
+* regulatorySequences: Array of Feature Objects that represent regulatorySequences
+* replicationOrigins: Array of Feature Objects that represent replicationOrigins
+* selectableMarkers: Array of Feature Objects that represent selectableMarkers
+* reporterGenes: Array of Feature Objects that represent reporterGenes
+* affinityTags: Array of Feature Objects that represent affinityTags
+* miscellaneousFeatures: Array of Feature Objects that represent miscellaneousFeatures
 #### Feature has properties:
 * name : String
 * start : Integer
