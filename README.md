@@ -1,5 +1,5 @@
 # **Endpoints**:
-## **Get Features**:
+## **Get Features** (GET request at /features):
 #### Gets promoters, terminators, selectable markers, reporter genes, replication origins, regulatory sequences, affinity tags, and miscellaneous features.
 ### **Input JSON fields**:
 * sequence : String
