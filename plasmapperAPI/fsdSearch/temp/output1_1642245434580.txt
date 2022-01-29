@@ -1,0 +1,10 @@
+Query_1	tetracycline_resistance_ORF[SEL]{tet},1191	99.580	1191	5	0	86	1276	1191	1	0.0	2172
+Query_1	ampicillin_resistance_gene_ORF[SEL]{amp},861	99.884	861	1	0	3293	4153	861	1	0.0	1585
+Query_1	pBR322_replication_origin[ORI]{pBR322},620	99.677	620	2	0	2519	3138	620	1	0.0	1134
+Query_1	ampicillin_resistance_gene2[SEL]{amp2},1015	99.806	515	1	0	3639	4153	515	1	0.0	946
+Query_1	ampicillin_resistance_gene2[SEL]{amp2},1015	98.416	505	2	6	3293	3796	1015	516	0.0	883
+Query_1	ROP_ORF[OTH]{ROP},192	100.000	192	0	0	1915	2106	1	192	6.04e-99	355
+Query_1	p15A_replication_origin[ORI]{p15A},913	78.418	607	74	40	2530	3129	264	820	4.71e-95	342
+Query_1	Zeocin_resistance_gene[SEL]{zeo},464	100.000	74	0	0	4171	4244	74	1	2.38e-33	137
+Query_1	trpE[SEL]{trpE},1050	100.000	31	0	0	4	34	1050	1020	1.91e-09	58.4
+Query_1	ampicillin_resistance_gene(b-lactamase)promoter[PRO]{amp},29	100.000	29	0	0	4195	4223	29	1	2.47e-08	54.7
