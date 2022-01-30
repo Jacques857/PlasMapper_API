@@ -11,7 +11,9 @@
 * selectableMarkers: Array of Feature Objects that represent selectableMarkers
 * reporterGenes: Array of Feature Objects that represent reporterGenes
 * affinityTags: Array of Feature Objects that represent affinityTags
-* miscellaneousFeatures: Array of Feature Objects that represent miscellaneousFeatures
+* localizationSequences: Array of Feature Objects that represent localization sequences
+* twoHybridGenes: Array of Feature Objects that represent two hybrid genes
+* misc: Array of Feature Objects that represent miscellaneousFeatures
 #### Feature has properties:
 * name : String
 * start : Integer
