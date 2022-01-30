@@ -31,7 +31,7 @@ class Feature:
 
     # Override representation method
     def __repr__(self):
-        return "(" + str(self.start) + "," + str(self.stop) + "," + self.legend + ")"
+        return "(" + str(self.start) + "," + str(self.stop) + "," + self.name + "," + self.legend + ")"
 
     # Override toString method
     def __str__(self):
