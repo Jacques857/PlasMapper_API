@@ -1,7 +1,7 @@
 import os
 import re
-from Utility import Utility
-from Feature import Feature
+from .Utility import Utility
+from .Feature import Feature
 from Bio.Blast.Applications import NcbiblastnCommandline
 
 class FSDSearch:
@@ -31,7 +31,6 @@ class FSDSearch:
             # dust = no -> no query sequence filtering with DUST
             # soft_masking = False -> no filtering location applied
             command = NcbiblastnCommandline(cmd = self.program, db = self.database, query = self.inputFile, out = self.outputFile, outfmt = 6, dust = "no", soft_masking = False)
-            print(command)
             command()
         except Exception as e:
             print(e)
@@ -55,7 +54,6 @@ class FSDSearch:
             # tokenList is formatted as follows:
             # [queryId, subjectId, featureType, featureLegend, length, identity, alignLength, mismatches, gapOpenings, qAlignStart, qAlignStop, sAlignStart, sAlignStop, eValue, bitScore]
             tokenList = re.split('\t|\r|\f|\[|\]\{|\},', hit.strip())
-            print(tokenList)
             name = tokenList[1]
             featureType = tokenList[2]
             featureLegend = tokenList[3]
@@ -108,7 +106,7 @@ class FSDSearch:
             self.misc.append(Feature(name, start, stop, featureLegend))
 
 #Testing Script
-f = FSDSearch(os.getcwd() + "\\temp\\input1_1642245434580.txt", os.getcwd() + "\\temp\\output1_1642245434580.txt")
+"""f = FSDSearch(os.getcwd() + "\\temp\\input.txt", os.getcwd() + "\\temp\\output.txt")
 print("promoters:", f.promoters)
 print("terminators:", f.terminators)
 print("regulatorySequences:", f.regulatorySequences)
@@ -118,4 +116,4 @@ print("reporterGenes:", f.reporterGenes)
 print("affinityTags:", f.affinityTags)
 print("localizationSequences:", f.localizationSequences)
 print("twoHybridGenes:", f.twoHybridGenes)
-print("misc:", f.misc)
+print("misc:", f.misc)"""
