@@ -23,7 +23,7 @@ def doFsdSearch(request):
     outputFileName = path + "output.txt"
 
     # fill input file with sequence in FASTA format
-    writeToFileFasta(sequence, inputFileName)
+    writeToFile(sequence.replace("\n", ""), inputFileName)
 
     # perform FSDSearch
     search = FSDSearch(inputFileName, outputFileName)
@@ -49,7 +49,7 @@ def doFsdSearch(request):
 
     return JsonResponse(responseDict)
 
-# Write a sequence "seq" to a file at path "fileName" in FASTA format
+# Write a raw sequence "seq" to a file at path "fileName" in FASTA format
 def writeToFileFasta(seq, fileName):
     f = open(fileName, 'w')
 
@@ -64,6 +64,11 @@ def writeToFileFasta(seq, fileName):
     # write the remaining <60 characters from seq on the last line
     if length > 0:
         f.write(seq[index :])
+
+# Write a String "seq" to a file at path "fileName"
+def writeToFile(seq, fileName):
+    f = open(fileName, 'w')
+    f.write(seq)
 
 # Return an HttpResponse object given status_code and reason_phrase
 def getResponse(status_code, reason_phrase):

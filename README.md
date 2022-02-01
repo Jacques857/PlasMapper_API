@@ -2,7 +2,7 @@
 ## **Get Features** (GET request at /features):
 #### Gets promoters, terminators, selectable markers, reporter genes, replication origins, regulatory sequences, affinity tags, and miscellaneous features.
 ### **Input JSON fields**:
-* sequence : String
+* sequence : String of raw sequence with no headers
 ### **Output JSON fields**:
 * promoters: Array of Feature Objects that represent promoters
 * terminators: Array of Feature Objects that represent terminators
