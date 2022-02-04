@@ -1,7 +1,7 @@
 import os
 import re
-from Utility import Utility
-from Feature import Feature
+from .Utility import Utility
+from .Feature import Feature
 from Bio.Blast.Applications import NcbiblastnCommandline
 
 class FSDSearch:
