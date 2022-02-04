@@ -1,7 +1,7 @@
 import os
 import re
-from .Utility import Utility
-from .Feature import Feature
+from Utility import Utility
+from Feature import Feature
 from Bio.Blast.Applications import NcbiblastnCommandline
 
 class FSDSearch:
@@ -37,7 +37,7 @@ class FSDSearch:
 
     # Parse the outputFile to fill feature lists with curated features (self.promoters, self.terminators, etc.)
     def curateFeatures(self):
-        file = open(self.outputFile)
+        file = open(self.outputFile, 'r')
         hits = file.readlines() # this represents the hits from BLAST
         lengthCutoff1 = 100 # defines the upper limit of the first length bracket
         lengthCutoff2 = 500 # defines the upper limit of the second length bracket
