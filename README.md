@@ -22,5 +22,5 @@
 
 # **Deployment Details**:
 ## Command to create a new db from fasta.nt file:
-### Navigate to \plasmapperAPI\fsdSearch\featureDB\ and run:
-### *path\to\blast\installation\blast-2.12.0+\bin\makeblastdb.exe -in 'features.fasta.nt' -dbtype 'nucl'*
+### * Navigate to \plasmapperAPI\fsdSearch\featureDB\ and run:
+### * *path\to\blast\installation\blast-2.12.0+\bin\makeblastdb.exe -in 'features.fasta.nt' -dbtype 'nucl'*
