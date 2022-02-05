@@ -6,3 +6,4 @@ numpy==1.22.1
 python-decouple==3.5
 sqlparse==0.4.2
 tzdata==2021.5
+django-cors-headers==3.11.0

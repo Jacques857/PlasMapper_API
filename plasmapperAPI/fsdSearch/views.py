@@ -6,7 +6,7 @@ from .serializers import FeatureSerializer
 import time, os
 
 # Performs a feature site database search given "sequence" in the request body. Outputs to outputFileName
-@api_view(['GET'])
+@api_view(['POST'])
 @parser_classes([JSONParser])
 def doFsdSearch(request):
     # get and validate the sequence from the request body
