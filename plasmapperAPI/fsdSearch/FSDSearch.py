@@ -60,26 +60,26 @@ class FSDSearch:
             length = tokenList[4]
             identity = tokenList[5]
             alignLength = tokenList[6]
-            sAlignStart = tokenList[11]
-            sAlignStop = tokenList[12]
+            qAlignStart = tokenList[9]
+            qAlignStop = tokenList[10]
 
             # convert numbers to int
             length = int(length)
             identity = float(identity)
             alignLength = int(alignLength)
-            sAlignStart = int(sAlignStart)
-            sAlignStop = int(sAlignStop)
+            qAlignStart = int(qAlignStart)
+            qAlignStop = int(qAlignStop)
 
             # only add curated features
             if length <= lengthCutoff1:
                 if alignLength == (alignCutoff1 * length) and identity >= identityCutoff1:
-                    self.addFeature(name, sAlignStart, sAlignStop, featureType, featureLegend)
+                    self.addFeature(name, qAlignStart, qAlignStop, featureType, featureLegend)
             elif length > lengthCutoff1 and length <= lengthCutoff2:
                 if alignLength > (alignCutoff2 * length) and identity >= identityCutoff2:
-                    self.addFeature(name, sAlignStart, sAlignStop, featureType, featureLegend)
+                    self.addFeature(name, qAlignStart, qAlignStop, featureType, featureLegend)
             else:
                 if alignLength > (alignCutoff3 * length) and identity >= identityCutoff3:
-                    self.addFeature(name, sAlignStart, sAlignStop, featureType, featureLegend)
+                    self.addFeature(name, qAlignStart, qAlignStop, featureType, featureLegend)
 
     # Create a new Feature object and add it to the appropriate feature list
     def addFeature(self, name, start, stop, featureType, featureLegend):
