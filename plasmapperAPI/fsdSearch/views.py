@@ -39,6 +39,8 @@ def doFsdSearch(request):
         "affinityTags" : search.affinityTags,
         "localizationSequences" : search.localizationSequences,
         "twoHybridGenes" : search.twoHybridGenes,
+        "genes" : search.genes,
+        "primers" : search.primers,
         "misc" : search.misc,
     }
 
