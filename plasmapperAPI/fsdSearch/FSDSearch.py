@@ -19,6 +19,8 @@ class FSDSearch:
         self.affinityTags = []
         self.localizationSequences = []
         self.twoHybridGenes = []
+        self.genes = []
+        self.primers = []
         self.misc = []
 
         self.doBlast()
@@ -102,6 +104,10 @@ class FSDSearch:
             self.localizationSequences.append(Feature(name, start, stop, featureLegend))
         elif featureType == "HYB":
             self.twoHybridGenes.append(Feature(name, start, stop, featureLegend))
+        elif featureType == "GEN":
+            self.genes.append(Feature(name, start, stop, featureLegend))
+        elif featureType == "PRI":
+            self.primers.append(Feature(name, start, stop, featureLegend))
         elif featureType == "OTH":
             self.misc.append(Feature(name, start, stop, featureLegend))
 
@@ -116,4 +122,6 @@ print("reporterGenes:", f.reporterGenes)
 print("affinityTags:", f.affinityTags)
 print("localizationSequences:", f.localizationSequences)
 print("twoHybridGenes:", f.twoHybridGenes)
+print("genes:", f.genes)
+print("primers:", f.primers)
 print("misc:", f.misc)"""

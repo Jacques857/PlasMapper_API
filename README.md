@@ -13,6 +13,8 @@
 * affinityTags: Array of Feature Objects that represent affinityTags
 * localizationSequences: Array of Feature Objects that represent localization sequences
 * twoHybridGenes: Array of Feature Objects that represent two hybrid genes
+* genes: Array of Feature Objects that represent genes
+* primers: Array of Feature Objects that represent primers
 * misc: Array of Feature Objects that represent miscellaneousFeatures
 #### Feature has properties:
 * name : String
