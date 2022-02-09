@@ -1,5 +1,5 @@
 # **Endpoints**:
-## **Get Features** (GET request at /features):
+## **Get Features** (POST request at /features):
 #### Gets promoters, terminators, selectable markers, reporter genes, replication origins, regulatory sequences, affinity tags, and miscellaneous features.
 ### **Input JSON fields**:
 * sequence : String of raw sequence with no headers
@@ -21,6 +21,26 @@
 * start : Integer
 * stop : Integer
 * legend : String
+
+## **Get Sequence** (GET request at /plasmids):
+#### Gets the sequence given the plasmid name.
+### **Input query parameters**:
+* ?name=theNameOfThePlasmid
+### **Output JSON fields**:
+* sequence: String of raw sequence with no headers
+
+## **Get Metadata** (GET request at /plasmids/meta):
+#### Gets all metadata except sequence for all plasmids in the database.
+### **Output JSON fields**:
+* plasmids: List of Plasmid objects
+#### Plasmid has properties:
+* name : String
+* sequencelength : Integer
+* promoter : String
+* backbone : String
+* insert : String
+* insertLength : Integer
+* species : String
 
 # **Deployment Details**:
 ## Steps to create a new db from updated features.fasta.nt file:
