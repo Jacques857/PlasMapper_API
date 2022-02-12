@@ -18,9 +18,10 @@ def doFsdSearch(request):
         return getResponse(400, "Missing 'sequence' from the JSON body.")
     
     # set path at which to store files
+    currentTime = str(time.time()).replace(".", "") # the number of seconds since epoch
     path = os.path.dirname(__file__) + '\\temp\\'
-    inputFileName = path + "input.txt"
-    outputFileName = path + "output.txt"
+    inputFileName = path + "input" + currentTime + ".txt"
+    outputFileName = path + "output" + currentTime + ".txt"
 
     # fill input file with sequence in FASTA format
     writeToFile(sequence.replace("\n", ""), inputFileName)
