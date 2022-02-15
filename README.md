@@ -35,7 +35,7 @@
 * plasmids: List of Plasmid objects
 #### Plasmid has properties:
 * name : String
-* sequencelength : Integer
+* sequenceLength : Integer
 * promoter : String
 * backbone : String
 * insert : String
