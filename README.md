@@ -36,11 +36,8 @@
 #### Plasmid has properties:
 * name : String
 * sequenceLength : Integer
-* promoter : String
 * backbone : String
-* insert : String
-* insertLength : Integer
-* species : String
+* features : String of comma separated feature names
 
 # **Deployment Details**:
 ## Steps to create a new db from updated features.fasta.nt file:
