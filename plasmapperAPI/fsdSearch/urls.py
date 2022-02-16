@@ -3,4 +3,6 @@ from . import views
 
 urlpatterns = [
   path('features', views.doFsdSearch, name='fsdSearch'),
+  path('plasmids', views.getPlasmidSequence, name='plasmidSequence'),
+  path('plasmids/meta', views.getPlasmidMeta, name='plasmidMeta')
 ]

@@ -1,9 +1,47 @@
+from urllib import response
 from django.http import JsonResponse, HttpResponse
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import JSONParser
 from .FSDSearch import FSDSearch
-from .serializers import FeatureSerializer
-import time, os
+from .serializers import FeatureSerializer, SequenceSerializer
+import time, os, json
+
+# Returns the metadata of all plasmids in the database
+@api_view(['GET'])
+def getPlasmidMeta(request):
+
+    # load in the json file
+    file = open(os.path.join(os.path.dirname(__file__), "metadata.json"), 'r')
+    data = json.load(file)
+    
+    responseDict = {"plasmids" : data}
+    print(responseDict)
+    return JsonResponse(responseDict)
+
+# Returns a sequence given the name of a plasmid as a query parameter
+@api_view(['GET'])
+def getPlasmidSequence(request):
+    name = request.GET.get("name")
+
+    # load in the json file
+    file = open(os.path.join(os.path.dirname(__file__), "sequences.json"), 'r')
+    data = json.load(file)
+
+    # check if the given name matches any plasmid in the database
+    match = False
+    sequence = None
+    for dict in data:
+        if dict["name"] == name:
+            match = True
+            sequence = dict["sequence"]
+            break
+    
+    # if no plasmid with the given name was found return 404
+    if not match:
+        return getResponse(404, "Plasmid with name '" + name + "' was not found")
+    
+    serializedData = SequenceSerializer({"sequence" : sequence}).data
+    return JsonResponse(serializedData)
 
 # Performs a feature site database search given "sequence" in the request body. Outputs to outputFileName
 @api_view(['POST'])

@@ -14,3 +14,6 @@ class FeatureSerializer(serializers.Serializer):
         Create and return a new Feature instance, given the validated data
         """
         return Feature.object.create(**validated_data)
+
+class SequenceSerializer(serializers.Serializer):
+    sequence = serializers.CharField(max_length = 20000)
