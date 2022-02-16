@@ -15,7 +15,6 @@ def getPlasmidMeta(request):
     data = json.load(file)
     
     responseDict = {"plasmids" : data}
-    print(responseDict)
     return JsonResponse(responseDict)
 
 # Returns a sequence given the name of a plasmid as a query parameter
