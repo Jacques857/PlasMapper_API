@@ -62,6 +62,7 @@ def checkRestrictionSites(sequence):
     count : int 
         Number of occurences
     """
+    sequence = sequence.lower()
     features = []
     for enzyme in COMMON_ENZYMES:
         findEnzyme = [*re.finditer(enzyme["reg"], sequence)]  # Run the RegEx for the enzyme on the sequence
