@@ -3,6 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import JSONParser
 from .FSDSearch import FSDSearch
+from .RestrictionSearch import checkRestrictionSites
 from .serializers import FeatureSerializer, SequenceSerializer
 import time, os, json
 
@@ -66,6 +67,9 @@ def doFsdSearch(request):
     # perform FSDSearch
     search = FSDSearch(inputFileName, outputFileName)
 
+    # find restriction sites
+    restrictionSearch = checkRestrictionSites(sequence)
+
     # extract fields into a dict
     responseDict = {
         "promoters" : search.promoters,
@@ -86,6 +90,8 @@ def doFsdSearch(request):
     for key in responseDict:
         serializer = FeatureSerializer(responseDict[key], many = True)
         responseDict[key] = serializer.data
+
+    responseDict["restriction"] = restrictionSearch
 
     return JsonResponse(responseDict)
 
