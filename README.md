@@ -37,6 +37,8 @@
 * name : String
 * sequenceLength : Integer
 * backbone : String
+* supplier : String
+* expression : String
 * features : String of comma separated feature names
 
 # **Deployment Details**:
