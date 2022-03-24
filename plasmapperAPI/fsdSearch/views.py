@@ -7,6 +7,33 @@ from .RestrictionSearch import checkRestrictionSites
 from .serializers import FeatureSerializer, SequenceSerializer
 import time, os, json
 
+# Increments the popularity of a plasmid given its name
+@api_view(['POST'])
+def incrementPopularity(request):
+    name = request.data.get("name")
+
+    # load in the json file
+    file = open(os.path.join(os.path.dirname(__file__), "metadata.json"), 'r')
+    data = json.load(file)
+    file.close()
+
+    # find the plasmid with the given name and increment its popularity value
+    found = False
+    for plasmid in data:
+        if plasmid["name"] == name:
+            plasmid["popularity"] += 1
+            found = True
+            break
+
+    if not found:
+        return getResponse(404, "Plasmid with name '" + name + "' was not found")
+
+    # write the new meta dictionary to the metaFile (overwrite)
+    metaFile = open(os.path.join(os.path.dirname(__file__), "metadata.json"), 'w')
+    metaFile.write(json.dumps(data))
+
+    return getResponse(200, "Popularity for " + name + " incremented")
+
 # Returns the metadata of all plasmids in the database
 @api_view(['GET'])
 def getPlasmidMeta(request):

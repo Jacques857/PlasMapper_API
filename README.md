@@ -41,6 +41,11 @@
 * expression : String
 * features : String of comma separated feature names
 
+## **Increment Plasmid Popularity** (POST request at /plasmids/popularity):
+#### Takes in a plasmid name and increments that plasmid's popularity if it exists in the database.
+### **Input JSON fields**:
+* name: String
+
 # **Deployment Details**:
 ## Steps to create a new db from updated features.fasta.nt file:
 * Navigate to \plasmapperAPI\fsdSearch\featureDB\ and run:
