@@ -32,7 +32,7 @@ class FSDSearch:
             # outfmt = 6 -> tabular alignment view
             # dust = no -> no query sequence filtering with DUST
             # soft_masking = False -> no filtering location applied
-            command = NcbiblastnCommandline(cmd = self.program, db = self.database, query = self.inputFile, out = self.outputFile, outfmt = 6, dust = "no", soft_masking = False)
+            command = NcbiblastnCommandline(cmd = self.program, db = self.database, query = self.inputFile, out = self.outputFile, outfmt = 6, dust = "no", soft_masking = False, word_size = 12)
             command()
         except Exception as e:
             print(e)

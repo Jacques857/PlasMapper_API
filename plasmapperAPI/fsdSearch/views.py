@@ -57,7 +57,7 @@ def doFsdSearch(request):
     
     # set path at which to store files
     currentTime = str(time.time()).replace(".", "") # the number of seconds since epoch
-    path = os.path.dirname(__file__) + '\\temp\\'
+    path = os.path.dirname(__file__) + '/temp/'
     inputFileName = path + "input" + currentTime + ".txt"
     outputFileName = path + "output" + currentTime + ".txt"
 
